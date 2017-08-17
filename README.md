@@ -6,16 +6,16 @@
 # 安装方式
 1. [npm](https://npmjs.com)
 ```shell
-npm i vue-share.js
+npm i vue-shares
 ```
 2. [yarn](https://yarnpkg.com/zh-Hans/)
 ```shell
-yarn add vue-share.js
+yarn add vue-shares
 ```
 
 # 使用方式
 ```js
-import share from 'vue-share'
+import share from 'vue-shares'
 Vue.use(share)
 Vue.components('V-share',share)
 ```
