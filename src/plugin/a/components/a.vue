@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="social-share" :data-url="shareUrl" :data-title="shareTitle" :data-description="shareDescription" :data-sites="shareSites" :data-wechat-qrcode-title="shareWechatQrcodeTitle" :data-wechat-qrcode-helper="shareWechatQrcodeHelper"></div>
+        <div class="social-share" :data-url="shareUrl" :data-disabled="shareDisabled" :data-title="shareTitle" :data-description="shareDescription" :data-sites="shareSites" :data-wechat-qrcode-title="shareWechatQrcodeTitle" :data-wechat-qrcode-helper="shareWechatQrcodeHelper"></div>
     </div>
 </template>
 <script>
