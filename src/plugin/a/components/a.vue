@@ -1,32 +1,62 @@
 <template>
     <div>
-        <div class="social-share1"></div>
+        <div class="social-share" :data-url="shareUrl" :data-title="shareTitle" :data-description="shareDescription" :data-sites="shareSites" :data-wechat-qrcode-title="shareWechatQrcodeTitle" :data-wechat-qrcode-helper="shareWechatQrcodeHelper"></div>
     </div>
 </template>
 <script>
 import 'social-share.js/dist/css/share.min.css'
-import share from 'social-share.js/dist/js/social-share.min.js'
-console.log(share)
+import 'social-share.js/dist/js/social-share.min.js'
 export default {
     data() {
         return {
-            config: {
-                url: '', // 网址，默认使用 window.location.href
-                source: '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
-                title: '', // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
-                description: '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
-                image: '', // 图片, 默认取网页中第一个img标签
-                sites: ['qzone', 'qq', 'weibo', 'wechat', 'douban'], // 启用的站点
-                disabled: ['google', 'facebook', 'twitter'], // 禁用的站点
-                wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
-                wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+        }
+    },
+    props: {
+        shareUrl: {
+            type: [String],
+            default: function () {
+                return window.location.href;
+            },
+        },
+        shareTitle: {
+            type: [String, Number],
+            default: function () {
+                return document.title;
+            },
+        },
+        shareDescription: {
+            type: [String]
+        },
+        shareSites: {
+            //启用的站点
+            type: [Array],
+        },
+        shareDisabled: {
+            type: [Array],
+            default: function () {
+                return []
+            }
+        },
+        shareWechatQrcodeTitle: {
+            //微信分享title文字
+            type: [String],
+            default: function () {
+                return "微信扫一扫：分享"
+            }
+        },
+        shareWechatQrcodeHelper: {
+            //微信分享描述
+            type: [String],
+            default() {
+                return `<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>`
             }
         }
+
     },
     methods: {
 
     },
-    mounted(){
+    mounted() {
         // document.querySelector('.social-share1').share(this.config)
     }
 }

@@ -35,7 +35,7 @@
         <a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a>
       </li>
     </ul>
-    <axa></axa>
+    <axa shareUrl="baidu.com" shareTitle="hello title" shareDescription="描述描述啊啊啊啊" :shareSites="arr" shareWechatQrcodeTitle="T T"  shareWechatQrcodeHelper="aaaaaa"></axa>
   </div>
 </template>
 
@@ -51,11 +51,16 @@ export default {
   name: 'hello',
   data() {
     return {
+      arr:['qzone', 'qq', 'weibo','wechat', 'douban'],
       msg: 'Welcome to Your Vue.js App'
     }
   },
+  created(){
+    document.title = '123'
+  },
   mounted() {
     this.ajax()
+    
   }
 }
 </script>

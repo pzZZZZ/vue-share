@@ -1,21 +1,22 @@
-# tools
+[Vue-share](https://github.com/pzZZZZ/vue-share)
+===
 
-> A Vue.js project
+一款基于[share.js](https://github.com/overtrue/share.js)开发的一款Vue插件.
+> 一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+# 安装方式
+1. [npm](https://npmjs.com)
+```shell
+npm i vue-share.js
+```
+2. [yarn](https://yarnpkg.com/zh-Hans/)
+```shell
+yarn add vue-share.js
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 使用方式
+```js
+import share from 'vue-share'
+Vue.use(share)
+Vue.components('V-share',share)
+```
